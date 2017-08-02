@@ -49,19 +49,23 @@ module Akashiyaki
     end
 
     def start_work
-      dakoku(DAKOKU_TYPES[:start_work])
+      res = dakoku(DAKOKU_TYPES[:start_work])
+      res.code
     end
 
     def finish_work
-      dakoku(DAKOKU_TYPES[:finish_work])
+      res = dakoku(DAKOKU_TYPES[:finish_work])
+      res.code
     end
 
     def start_break
-      dakoku(DAKOKU_TYPES[:start_break])
+      res = dakoku(DAKOKU_TYPES[:start_break])
+      res.code
     end
 
     def finish_break
-      dakoku(DAKOKU_TYPES[:finish_break])
+      res = dakoku(DAKOKU_TYPES[:finish_break])
+      res.code
     end
 
     private
