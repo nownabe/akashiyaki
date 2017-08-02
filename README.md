@@ -1,8 +1,6 @@
 # Akashiyaki
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/akashiyaki`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Automation for AKASHI https://ak4.jp .
 
 ## Installation
 
@@ -22,7 +20,15 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```rb
+require "akashiyaki"
+
+client = Akashiyaki::Client.new(company_id, login_id, password)
+client.start_work
+client.finish_work
+client.start_break
+client.finish_break
+```
 
 ## Development
 
@@ -32,7 +38,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/akashiyaki.
+Bug reports and pull requests are welcome on GitHub at https://github.com/nownabe/akashiyaki.
 
 ## License
 
