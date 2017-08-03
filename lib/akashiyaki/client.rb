@@ -1,6 +1,9 @@
+# coding: utf-8
 # frozen_string_literal: true
 
 require "mechanize"
+
+require "akashiyaki/errors"
 
 module Akashiyaki
   class Client
@@ -16,6 +19,7 @@ module Akashiyaki
       password: "form[password]",
     }.freeze
 
+    DAKOKU_PAGE_TITLE_RE = /打刻/
     DAKOKU_FORM_ID = "new_form"
     DAKOKU_FORM_FIELDS = {
       authenticity_token: "authenticity_token",
@@ -45,7 +49,9 @@ module Akashiyaki
       @account.each do |field, value|
         login_form[LOGIN_FORM_FIELDS[field]] = value
       end
-      login_form.submit
+      res = login_form.submit
+      raise NotAuthorized, "failed to log in" unless res.title =~ DAKOKU_PAGE_TITLE_RE
+      res
     end
 
     def start_work

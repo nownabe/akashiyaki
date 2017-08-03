@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require "akashiyaki/client"
+require "akashiyaki/errors"
 
 module Akashiyaki
   class Command
@@ -14,6 +15,9 @@ module Akashiyaki
 
     def run
       client.send(:"#{action}_#{mode}")
+      puts "Succeeded!"
+    rescue NotAuthorized => e
+      puts "Failed! #{e.message}"
     end
 
     private
