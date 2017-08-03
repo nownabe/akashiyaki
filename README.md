@@ -37,20 +37,14 @@ Akashiyaki includes `ak4` command that is a CLI tool to access AKASHI.
 Basic usage:
 
 ```bash
-# To start work
 ak4 work start
-
-# To finish work
 ak4 work finish
 
-# To start break
 ak4 break start
-
-# To finish break
 ak4 break finish
 ```
 
-When `ak4` is executed without account information, `ak4` asks you about your account:
+When `ak4` is given no account information, it asks you about your account:
 
 ```bash
 $ ak4 work finish
@@ -59,7 +53,7 @@ Login ID: myid
 Password: %
 ```
 
-If you think it's too much bother to enter account information everytime,  you can save your account as configuration file `~/.config/ak4/account.yaml` (or `~/.config/ak4/account.json`):
+If you think it's too much bother to enter account information everytime,  you can save your account as a configuration file `~/.config/ak4/account.yaml` (or `~/.config/ak4/account.json`):
 
 ```yaml
 company: mycompany
@@ -76,7 +70,7 @@ company: mycompany
 id: myid
 ```
 
-So `ak4` asks you about only password.
+So `ak4` asks you about only password when executed.
 
 You can also use command options:
 
