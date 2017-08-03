@@ -43,7 +43,9 @@ module Akashiyaki
       return config[:password] if config[:password]
 
       print "Password: "
-      STDIN.noecho(&:gets).chomp
+      password = STDIN.noecho(&:gets).chomp
+      puts
+      password
     end
 
     def search_config
