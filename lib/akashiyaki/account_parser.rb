@@ -40,7 +40,7 @@ module Akashiyaki
 
     def password
       return @options[:password] if @options[:password]
-      return config[:password] if config[:password]
+      return config["password"] if config["password"]
 
       print "Password: "
       password = STDIN.noecho(&:gets).chomp
